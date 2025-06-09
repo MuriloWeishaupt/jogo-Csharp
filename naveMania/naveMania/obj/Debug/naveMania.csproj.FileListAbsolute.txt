@@ -1,0 +1,16 @@
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.csprojResolveAssemblyReference.cache
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.MainForm.resources
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.csproj.GenerateResource.Cache
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.exe.config
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.exe
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.pdb
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.exe
+F:\C#\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.pdb
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.exe.config
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.exe
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\bin\Debug\naveMania.pdb
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.csprojResolveAssemblyReference.cache
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.MainForm.resources
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.csproj.GenerateResource.Cache
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.exe
+D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.pdb
