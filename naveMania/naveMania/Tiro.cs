@@ -40,7 +40,7 @@ namespace naveMania
 		    	if (ctrl is Inimigo) {
 		    		Inimigo inimigo = (Inimigo)ctrl;
 		    		if (this.Bounds.IntersectsWith(inimigo.Bounds)) {
-		    			inimigo.Destruir();
+		    			inimigo.levarDano(1);
 		    			this.Destruir();
 		    			break;
 		    		}

@@ -14,12 +14,20 @@ namespace naveMania
 			InitializeComponent();
 			fundo.Controls.Add(inimigo);
 			fundo.Controls.Add(player);
+			
+			tiroCoolDown.Interval = 200;
+			tiroCoolDown.Tick += (s, e) => {
+				podeAtirarFi = true;
+				tiroCoolDown.Stop();
+			};
 		}
 		
 		public static PictureBox fundo = new PictureBox();
 		Player player = new Player();
 		Inimigo inimigo = new Inimigo();
 		public static List<Tiro> tiros = new List<Tiro>();
+		Timer tiroCoolDown = new Timer();
+		bool podeAtirarFi = true;
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
@@ -49,9 +57,11 @@ namespace naveMania
 				player.MoveBaixo();
 			}
 			
-			if (e.KeyCode == Keys.Space) {
+			if (e.KeyCode == Keys.Space && podeAtirarFi) {
 				Tiro novoTiro = new Tiro(player.Left, player.Top);
 				tiros.Add(novoTiro);
+				podeAtirarFi = false;
+				tiroCoolDown.Start();
 			}
 			
 		}

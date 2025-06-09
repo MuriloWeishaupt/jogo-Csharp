@@ -16,10 +16,19 @@ namespace naveMania
 			Left = 50;
 
 			Load("naveInimigo.gif");
+			
+			hp = 10;
 
 			timerMovimento.Interval = 80;
 			timerMovimento.Tick += Movimento;
 			timerMovimento.Enabled = true;
+		}
+		
+		public void levarDano(int dano) {
+			hp -= dano;
+			if (hp <= 0) {
+				Destruir();
+			}
 		}
 
 		private void Movimento(object sender, EventArgs e)
