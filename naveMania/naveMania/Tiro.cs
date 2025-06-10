@@ -49,7 +49,7 @@ namespace naveMania
 		    }
 		}
 		
-		private void Destruir() {
+		public void Destruir() {
 			timerTiro.Stop();
 			timerTiro.Dispose();
 			MainForm.fundo.Controls.Remove(this);

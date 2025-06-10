@@ -5,6 +5,8 @@ namespace naveMania
 
 	public class Player: Nave
 	{
+		
+		
 		public Player()
 		{
 			Load("navePlayer.gif");
@@ -46,6 +48,14 @@ namespace naveMania
 			Top += speed;
 			if (Top >= 360) {
 				Top = 360;
+			}
+		}
+		
+		
+		public void levarDano(int dano) {
+			hp -= dano;
+			if (hp <= 0) {
+				Destruir();
 			}
 		}
 	}

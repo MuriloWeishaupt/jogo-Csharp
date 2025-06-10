@@ -3,14 +3,9 @@ using System.Windows.Forms;
 
 namespace naveMania
 {
-	/// <summary>
-	/// Class with program entry point.
-	/// </summary>
+
 	internal sealed class Program
 	{
-		/// <summary>
-		/// Program entry point.
-		/// </summary>
 		[STAThread]
 		private static void Main(string[] args)
 		{

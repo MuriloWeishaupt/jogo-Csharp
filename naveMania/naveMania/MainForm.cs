@@ -23,7 +23,7 @@ namespace naveMania
 		}
 		
 		public static PictureBox fundo = new PictureBox();
-		Player player = new Player();
+		public static Player player = new Player();
 		Inimigo inimigo = new Inimigo();
 		public static List<Tiro> tiros = new List<Tiro>();
 		Timer tiroCoolDown = new Timer();

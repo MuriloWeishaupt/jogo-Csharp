@@ -7,6 +7,7 @@ namespace naveMania
 	{
 		private int direcaoHorizontal = 1;
 		public Timer timerMovimento = new Timer();
+		private Timer timerAtirar = new Timer();
 
 		public Inimigo()
 		{
@@ -22,14 +23,17 @@ namespace naveMania
 			timerMovimento.Interval = 80;
 			timerMovimento.Tick += Movimento;
 			timerMovimento.Enabled = true;
+			timerAtirar.Interval = 500;
+			timerAtirar.Tick += Atirar;
+			timerAtirar.Enabled = true;
 		}
 		
-		public void levarDano(int dano) {
-			hp -= dano;
-			if (hp <= 0) {
-				Destruir();
-			}
+		
+		private void Atirar(object sender, EventArgs e) {
+			TiroInimigo tiro = new TiroInimigo(Left, Top);
 		}
+		
+		
 
 		private void Movimento(object sender, EventArgs e)
 		{
@@ -45,10 +49,18 @@ namespace naveMania
 				direcaoHorizontal = 1;
 			}
 		}
+		
+		public void levarDano(int dano) {
+			hp -= dano;
+			if (hp <= 0) {
+				Destruir();
+			}
+		}
 
 		public void Destruir()
 		{
-			timerMovimento.Enabled = false;
+			timerMovimento.Stop();
+			timerAtirar.Stop();
 			MainForm.fundo.Controls.Remove(this);
 			this.Dispose();
 		}
