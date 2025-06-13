@@ -12,20 +12,18 @@ namespace naveMania
 		{
 			
 			InitializeComponent();
-			fundo.Controls.Add(inimigo);
-			fundo.Controls.Add(player);
 			
 			tiroCoolDown.Interval = 200;
 			tiroCoolDown.Tick += (s, e) => {
-				podeAtirarFi = true;
-				tiroCoolDown.Stop();
+			podeAtirarFi = true;
+			tiroCoolDown.Stop();
 			};
 		}
 		
-		public static PictureBox fundo = new PictureBox();
-		public static Player player = new Player();
-		Inimigo inimigo = new Inimigo();
-		public static List<Tiro> tiros = new List<Tiro>();
+		
+		public Player player;
+		public PictureBox fundo = new PictureBox();
+		public List<Tiro> tiros = new List<Tiro>();
 		Timer tiroCoolDown = new Timer();
 		bool podeAtirarFi = true;
 		
@@ -37,6 +35,11 @@ namespace naveMania
 			fundo.Width = this.Width;
 			fundo.Load("space.jpg");
 			fundo.SizeMode = PictureBoxSizeMode.StretchImage;
+			
+			player = new Player(fundo, this);
+			fundo.Controls.Add(player);
+			
+			SpawnInimigos(1);
 		}
 		
 		void MainFormKeyDown(object sender, KeyEventArgs e)
@@ -58,12 +61,22 @@ namespace naveMania
 			}
 			
 			if (e.KeyCode == Keys.Space && podeAtirarFi) {
-				Tiro novoTiro = new Tiro(player.Left, player.Top);
+				Tiro novoTiro = new Tiro(player.Left, player.Top, this);
 				tiros.Add(novoTiro);
 				podeAtirarFi = false;
 				tiroCoolDown.Start();
 			}
 			
+		}
+		
+		
+		public void SpawnInimigos(int quant) {
+			for (int i = 0; i < quant; i++) {
+				Inimigo novoInimigo = new Inimigo(this, fundo);
+				novoInimigo.Left = 50 + i * 150;
+				novoInimigo.Top = 0;
+				fundo.Controls.Add(novoInimigo);
+			}
 		}
 		
 		

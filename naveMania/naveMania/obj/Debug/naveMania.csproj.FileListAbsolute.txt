@@ -14,3 +14,13 @@ D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.MainForm.res
 D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.csproj.GenerateResource.Cache
 D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.exe
 D:\Csharp\Saiz\jogoNaveSaiz\naveMania\naveMania\obj\Debug\naveMania.pdb
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\bin\Debug\naveMania.exe.config
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\bin\Debug\naveMania.exe
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\bin\Debug\naveMania.pdb
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.csprojResolveAssemblyReference.cache
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.MainForm.resources
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.csproj.GenerateResource.Cache
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.exe
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.pdb
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.MenuForm.resources
+C:\Users\muril\OneDrive\Desktop\projetos\jogo-Csharp\naveMania\naveMania\obj\Debug\naveMania.GameOverForm.resources

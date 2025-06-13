@@ -8,14 +8,13 @@ namespace naveMania
 	public class Nave: PictureBox
 	{
 			
-		public Nave()
+		public Nave(PictureBox fundo)
 		{
 		
 			Width = 70;
 			Height = 70;
 			SizeMode = PictureBoxSizeMode.StretchImage;
 			BackColor = Color.Transparent;
-			Parent = MainForm.fundo;
 		}
 		
 		public int attack = 10;
@@ -26,8 +25,7 @@ namespace naveMania
 		
 		
 		public void Destruir() {
-			MainForm.fundo.Controls.Remove(this);
-			Dispose();
+			this.Dispose();
 		}
 	}
 }

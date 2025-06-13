@@ -8,9 +8,13 @@ namespace naveMania
 		private int direcaoHorizontal = 1;
 		public Timer timerMovimento = new Timer();
 		private Timer timerAtirar = new Timer();
+		private MainForm mainForm;
 
-		public Inimigo()
+		public Inimigo(MainForm form, PictureBox fundo): base(fundo)
 		{
+			
+			mainForm = form;
+			
 			Height = 95;
 			Width = 120;
 			Top = 70;
@@ -30,7 +34,7 @@ namespace naveMania
 		
 		
 		private void Atirar(object sender, EventArgs e) {
-			TiroInimigo tiro = new TiroInimigo(Left, Top);
+			TiroInimigo tiro = new TiroInimigo(Left, Top, mainForm);
 		}
 		
 		
@@ -61,8 +65,8 @@ namespace naveMania
 		{
 			timerMovimento.Stop();
 			timerAtirar.Stop();
-			MainForm.fundo.Controls.Remove(this);
 			this.Dispose();
+			mainForm.SpawnInimigos(2);
 		}
 	}
 }

@@ -7,14 +7,18 @@ namespace naveMania
     public class TiroInimigo : PictureBox
     {
         private Timer timerTiro = new Timer();
+        private MainForm mainForm; 
 
-        public TiroInimigo(int x, int y)
+ 
+        public TiroInimigo(int x, int y, MainForm form)
         {
+            this.mainForm = form;
+
             Width = 10;
             Height = 30;
             BackColor = Color.Red;
             Location = new Point(x + 30, y + 60);
-            Parent = MainForm.fundo;
+            Parent = mainForm.fundo;
             BringToFront();
 
             timerTiro.Interval = 20;
@@ -24,20 +28,21 @@ namespace naveMania
 
         private void Mover(object sender, EventArgs e)
         {
-            Top += 10; 
+            Top += 10;
 
-            if (Top > MainForm.fundo.Height)
+            if (Top > mainForm.fundo.Height)
             {
                 timerTiro.Stop();
+                mainForm.fundo.Controls.Remove(this);
                 Dispose();
                 return;
             }
 
-            if (this.Bounds.IntersectsWith(MainForm.player.Bounds))
+            if (this.Bounds.IntersectsWith(mainForm.player.Bounds))
             {
-                MainForm.player.levarDano(1);
+                mainForm.player.levarDano(1);
                 timerTiro.Stop();
-                MainForm.fundo.Controls.Remove(this);
+                mainForm.fundo.Controls.Remove(this);
                 Dispose();
             }
         }

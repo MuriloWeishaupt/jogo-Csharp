@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace naveMania
 {
 
 	public class Player: Nave
 	{
+		private MainForm mainForm;
+		public static bool gameOverativo = false;
 		
-		
-		public Player()
+		public Player(PictureBox fundo, MainForm mainForm) : base(fundo)
 		{
 			Load("navePlayer.gif");
 			Left = 200;
@@ -56,6 +59,14 @@ namespace naveMania
 			hp -= dano;
 			if (hp <= 0) {
 				Destruir();
+				if (!gameOverativo) {
+					gameOverativo = true;
+					GameOverForm gameOver = new GameOverForm(mainForm);
+					gameOver.ShowDialog();
+				}
+				
+				
+
 			}
 		}
 	}
