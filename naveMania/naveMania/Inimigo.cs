@@ -8,7 +8,7 @@ namespace naveMania
 		private int direcaoHorizontal = 1;
 		public Timer timerMovimento = new Timer();
 		private Timer timerAtirar = new Timer();
-		private MainForm mainForm;
+		public MainForm mainForm;
 
 		public Inimigo(MainForm form, PictureBox fundo): base(fundo)
 		{
@@ -61,12 +61,11 @@ namespace naveMania
 			}
 		}
 
-		public void Destruir()
+		public new void Destruir()
 		{
 			timerMovimento.Stop();
 			timerAtirar.Stop();
 			this.Dispose();
-			mainForm.SpawnInimigos(2);
 		}
 	}
 }
