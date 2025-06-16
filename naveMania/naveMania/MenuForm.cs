@@ -18,16 +18,21 @@ namespace naveMania
 			startButton.Height = 40;
 			startButton.Top = 100;
 			startButton.Left = 100;
+			button1.FlatStyle = FlatStyle.Flat;
+			button1.FlatAppearance.BorderSize = 0;
+			this.FormBorderStyle = FormBorderStyle.None;
 		}
 		
 		public static PictureBox fundo = new PictureBox();
+		
+
 		
 		void MenuFormLoad(object sender, EventArgs e)
 		{
 			fundo.Parent = this;
 			fundo.Height = this.Height;
 			fundo.Width = this.Width;
-			fundo.Load("menu-start.png");
+			fundo.Load("menu_start.png");
 			fundo.SizeMode = PictureBoxSizeMode.StretchImage;
 		}
 		

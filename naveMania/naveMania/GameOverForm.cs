@@ -23,8 +23,13 @@ namespace naveMania
         fundo.Parent = this;
         fundo.Height = this.Height;
         fundo.Width = this.Width;
-        fundo.Load("game-over.png");
+        fundo.Load("game_over.png");
         fundo.SizeMode = PictureBoxSizeMode.StretchImage;
+        button1.FlatStyle = FlatStyle.Flat;
+		button1.FlatAppearance.BorderSize = 0;
+		button2.FlatStyle = FlatStyle.Flat;
+		button2.FlatAppearance.BorderSize = 0;
+		this.FormBorderStyle = FormBorderStyle.None;
     }
 
     void Button1Click(object sender, EventArgs e)

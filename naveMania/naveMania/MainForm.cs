@@ -8,6 +8,9 @@ namespace naveMania
 	
 	public partial class MainForm : Form
 	{
+		
+		private LinguagemProgramacao bossAtual;
+		
 		public MainForm()
 		{
 			
@@ -34,6 +37,8 @@ namespace naveMania
 		public int faseAtual = 1;
 		public int totalFases = 5;
 		
+
+		
 		void MainFormLoad(object sender, EventArgs e)
 		{
 			
@@ -42,6 +47,7 @@ namespace naveMania
 			fundo.Width = this.Width;
 			fundo.Load("space.jpg");
 			fundo.SizeMode = PictureBoxSizeMode.StretchImage;
+			this.FormBorderStyle = FormBorderStyle.None;
 			
 			bossNameLabel = new Label();
 			bossNameLabel.Text = "Python";
@@ -74,6 +80,7 @@ namespace naveMania
 		
 		void MainFormKeyDown(object sender, KeyEventArgs e)
 		{
+			
 			if (e.KeyCode == Keys.D) {
 			player.MoveDir();
 			player.AtualizarLabels();
@@ -139,19 +146,17 @@ namespace naveMania
 				AtualizarBossBar(((LinguagemProgramacao)boss).pontosVida);
 				bossNameLabel.Text = ((LinguagemProgramacao)boss).nome;
 			}
+			
+			this.bossAtual = (LinguagemProgramacao)boss;
 		}
 
 		public void ProximaFase()
 		{
+			
 			faseAtual++;
 			if (faseAtual <= totalFases)
 			{
 				SpawnBossFase();
-			}
-			else
-			{
-				MessageBox.Show("Parabéns! Você venceu todos os bosses!");
-				// Reinicie ou feche o jogo, se quiser
 			}
 		}
 		

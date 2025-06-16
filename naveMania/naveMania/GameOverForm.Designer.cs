@@ -42,29 +42,34 @@ namespace naveMania
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(234, 333);
+			this.button1.BackColor = System.Drawing.Color.Yellow;
+			this.button1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Location = new System.Drawing.Point(437, 476);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(146, 47);
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Jogar Novamente";
-			this.button1.UseVisualStyleBackColor = true;
+			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(234, 393);
+			this.button2.BackColor = System.Drawing.Color.Yellow;
+			this.button2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(258, 476);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(146, 47);
 			this.button2.TabIndex = 1;
 			this.button2.Text = "Voltar ao Menu";
-			this.button2.UseVisualStyleBackColor = true;
+			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// GameOverForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(608, 452);
+			this.ClientSize = new System.Drawing.Size(849, 535);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Name = "GameOverForm";

@@ -27,8 +27,10 @@ namespace naveMania
                 mainForm.AtualizarBossBar(pontosVida);
                 if (pontosVida <= 0)
                 {
-                    mainForm.ProximaFase();
-                    this.Dispose();
+                	this.Hide();
+                	PassaFase pf = new PassaFase(mainForm, this);
+                	pf.Show();
+                    
                 }
             }
         }

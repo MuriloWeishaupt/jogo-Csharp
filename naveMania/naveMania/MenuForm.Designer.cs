@@ -41,12 +41,14 @@ namespace naveMania
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(473, 306);
+			this.button1.BackColor = System.Drawing.Color.Yellow;
+			this.button1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(458, 503);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(141, 60);
+			this.button1.Size = new System.Drawing.Size(214, 58);
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Iniciar Jogo";
-			this.button1.UseVisualStyleBackColor = true;
+			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// MenuForm
