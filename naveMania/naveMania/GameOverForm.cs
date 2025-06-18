@@ -34,16 +34,17 @@ namespace naveMania
 
     void Button1Click(object sender, EventArgs e)
     {
-        jogoAtual.Close(); 
+         
         MainForm novoJogo = new MainForm();
         novoJogo.StartPosition = FormStartPosition.CenterScreen;
         novoJogo.Show();
         this.Close();
+        jogoAtual.Hide();
     }
 
     void Button2Click(object sender, EventArgs e)
     {
-        jogoAtual.Close(); 
+        jogoAtual.Close();
         MenuForm voltaMenu = new MenuForm();
         voltaMenu.StartPosition = FormStartPosition.CenterScreen;
         voltaMenu.Show();

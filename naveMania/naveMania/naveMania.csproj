@@ -79,6 +79,10 @@
     <Compile Include="Rust.cs" />
     <Compile Include="Tiro.cs" />
     <Compile Include="TiroInimigo.cs" />
+    <Compile Include="Win.cs" />
+    <Compile Include="Win.Designer.cs">
+      <DependentUpon>Win.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PassaFase.resx">
       <DependentUpon>PassaFase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Win.resx">
+      <DependentUpon>Win.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

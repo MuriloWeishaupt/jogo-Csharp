@@ -13,12 +13,14 @@ namespace naveMania
         public TiroInimigo(int x, int y, MainForm form)
         {
             this.mainForm = form;
+            mainForm.fundo.Controls.Add(this);
+            SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Load("tiroDown.png");
 
-            Width = 10;
-            Height = 30;
-            BackColor = Color.Red;
+            Width = 30;
+            Height = 50;
+            BackColor = Color.Transparent;
             Location = new Point(x + 30, y + 60);
-            Parent = mainForm.fundo;
             BringToFront();
 
             timerTiro.Interval = 20;

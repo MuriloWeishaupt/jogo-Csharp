@@ -16,10 +16,13 @@ namespace naveMania
 			
 			InitializeComponent();
 			
+			faseAtual = 1;
+			tiros = new List<Tiro>();
 			tiroCoolDown.Interval = 200;
 			tiroCoolDown.Tick += (s, e) => {
 			podeAtirarFi = true;
 			tiroCoolDown.Stop();
+			
 			};
 		}
 		
@@ -41,7 +44,8 @@ namespace naveMania
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
-			
+			this.KeyPreview = true;
+			this.KeyDown += MainFormKeyDown;
 			fundo.Parent = this;
 			fundo.Height = this.Height;
 			fundo.Width = this.Width;
@@ -74,6 +78,7 @@ namespace naveMania
 			
 			player = new Player(fundo, this);
 			fundo.Controls.Add(player);
+			
 			
 			SpawnBossFase();
 		}
@@ -156,6 +161,9 @@ namespace naveMania
 			faseAtual++;
 			if (faseAtual <= totalFases)
 			{
+				if (bossAtual != null) {
+					fundo.Controls.Remove(bossAtual);
+				}
 				SpawnBossFase();
 			}
 		}

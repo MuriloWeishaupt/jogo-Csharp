@@ -15,10 +15,11 @@ public class Tiro : PictureBox
     {
         this.mainForm = mainForm;
         mainForm.fundo.Controls.Add(this); 
-
-        Width = 10;
-        Height = 30;
-        BackColor = Color.Yellow;
+        SizeMode = PictureBoxSizeMode.StretchImage;
+        this.Load("tiro.png");
+        Width = 30;
+        Height = 50;
+        BackColor = Color.Transparent;
         Location = new Point(x + 30, y);
         BringToFront();
 

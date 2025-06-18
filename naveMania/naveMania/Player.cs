@@ -10,10 +10,12 @@ namespace naveMania
 		public static bool gameOverativo = false;
 		public Label labelNome;
 		public Label labelVida;
+		public bool estaVivo;
 
 		public Player(PictureBox fundo, MainForm mainForm)
 		{
 			this.mainForm = mainForm;
+			estaVivo = true;
 			Width = 90;
 			Height = 90;
 			SizeMode = PictureBoxSizeMode.StretchImage;
@@ -59,9 +61,15 @@ namespace naveMania
 
 		public void levarDano(int dano)
 		{
+			
+			if (!estaVivo) return;
+			
 			pontosVida = pontosVida - dano;
 			if (pontosVida <= 0)
 			{
+				pontosVida = 0;
+				estaVivo = false;
+				
 				if (!gameOverativo)
 				{
 					gameOverativo = true;
@@ -74,6 +82,8 @@ namespace naveMania
 
 		public void MoveDir()
 		{
+			if (!estaVivo) return;
+			
 			Left = Left + velocidade;
 			if (Left >= 1000)
 			{
@@ -88,6 +98,8 @@ namespace naveMania
 
 		public void MoveEsq()
 		{
+			if (!estaVivo) return;
+			
 			Left = Left - velocidade;
 			if (Left <= 0)
 			{
@@ -102,6 +114,8 @@ namespace naveMania
 
 		public void MoveCima()
 		{
+			if (!estaVivo) return;
+			
 			Top = Top - velocidade;
 			if (Top <= 0)
 			{
@@ -112,6 +126,8 @@ namespace naveMania
 
 		public void MoveBaixo()
 		{
+			if (!estaVivo) return;
+			
 			Top = Top + velocidade;
 			if (Top >= 360)
 			{
@@ -122,13 +138,25 @@ namespace naveMania
 
 		public void Atacar(LinguagemProgramacao alvo)
 		{
+			if (!estaVivo) return;
+			
 			int dano = 100 + (nivel * 20);
 			alvo.ReceberDano(dano);
 			if (alvo.pontosVida <= 0 )
 			{
 				pontuacao = pontuacao + 500;
 				nivel = nivel + 1;
+				mainForm.ProximaFase();
 			}
+		}
+		
+		public void Resetar() {
+			pontosVida = 100;
+			nivel = 1;
+			estaVivo = true;
+			gameOverativo = false;
+			
+			AtualizarLabels();
 		}
 	}
 }

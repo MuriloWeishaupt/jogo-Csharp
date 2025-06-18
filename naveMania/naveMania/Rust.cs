@@ -4,14 +4,20 @@ namespace naveMania
 {
     public class Rust : LinguagemProgramacao
     {
+    	
         public Rust(MainForm form, PictureBox fundo) : base(form, fundo)
         {
+        	
+        	this.mainForm = form;
+        	
             nome = "Rust";
             dificuldade = 5;
             pontosVida = 1;
             velocidade = 3;
             Load("rust.png");
         }
+        
+        private bool bossDerrotado = false;
 
         public void levarDanoRust(int dano)
         {
@@ -23,10 +29,12 @@ namespace naveMania
             if (mainForm != null)
             {
                 mainForm.AtualizarBossBar(pontosVida);
-                if (pontosVida <= 0)
+                if (pontosVida <= 0 && !bossDerrotado)
                 {
-                    mainForm.ProximaFase();
-                    this.Dispose();
+                	bossDerrotado  = true;
+                	this.Hide();
+                    Win deuBom = new Win(mainForm);
+                    deuBom.ShowDialog();
                 }
             }
         }
